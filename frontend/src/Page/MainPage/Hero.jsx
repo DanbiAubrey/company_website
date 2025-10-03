@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl 2xl:text-7xl font-bold text-gray-900 leading-tight mb-6 lg:mb-12">
               With experts in AI
-              <span className="block text-blue-600 mt-2 lg:mt-6">
+              <span className="block text-red-600 mt-2 lg:mt-6">
                 we build our future together
               </span>
             </h1>
@@ -17,10 +17,10 @@ const Hero = () => {
               An AI company dedicated to creating future value through intelligent technology
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-lg font-semibold shadow-lg hover:shadow-xl">
+              <button className="px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-300 text-lg font-semibold shadow-lg hover:shadow-xl">
                 Inquiry
               </button>
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors duration-300 text-lg font-semibold">
+              <button className="px-8 py-4 bg-white text-red-600 rounded-lg border-2 border-red-600 hover:bg-red-50 transition-colors duration-300 text-lg font-semibold">
                 Learn more
               </button>
             </div>
@@ -44,7 +44,7 @@ const Hero = () => {
             { number: "24/7", label: "Technical Support" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-blue-600">
+              <div className="text-3xl font-bold text-red-600">
                 {stat.number}
               </div>
               <div className="text-gray-900">{stat.label}</div>
