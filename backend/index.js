@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 const userRoutes = require("./routes/user");
+const contactRoutes = require("./routes/contact");
 
 app.use(
   cors({
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.use("/api/auth", userRoutes);
+app.use("/api/contact", contactRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
