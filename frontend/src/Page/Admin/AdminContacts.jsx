@@ -30,38 +30,38 @@ const AdminContacts = () => {
 
   return (
     <div className="p-4 mx-auto max-w-[1400px]">
-      <h1 className="text-4xl font-bold mt-6 mb-4">문의 관리</h1>
+      <h1 className="text-4xl font-bold mt-6 mb-4">Inquiries Management</h1>
 
       <div className="mb-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex w-full md:w-auto gap-2">
           <select className="border rounded px-3 py-2 text-base">
-            <option value="name">이름</option>
-            <option value="email">이메일</option>
-            <option value="phone">전화번호</option>
-            <option value="message">문의내용</option>
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="message">Message</option>
           </select>
           <div className="flex-1 md:w-80">
             <input
               type="text"
-              placeholder="검색어를 입력하세요"
+              placeholder="Search..."
               className="w-full border rounded px-3 py-2 text-base"
             />
           </div>
           <select className="border rounded px-3 py-2 text-base">
-            <option value="all">전체 상태</option>
-            <option value="pending">대기중</option>
-            <option value="in progress">진행중</option>
-            <option value="completed">완료</option>
+            <option value="all">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
           </select>
         </div>
 
         <div className="flex items-center space-x-2">
           <label className="text-base font-bold text-gray-600">
-            페이지당 표시:{" "}
+            Items per page:{" "}
           </label>
           <select className="border rounded px-3 py-2">
             {[10, 25, 50, 100].map((size) => (
-              <option key={size} value={size}>{`${size}개`}</option>
+              <option key={size} value={size}>{`${size} items`}</option>
             ))}
           </select>
         </div>
@@ -75,13 +75,13 @@ const AdminContacts = () => {
         <table className="w-full bg-white shadow-md rounded-lg overflow-hidden text-sm lg:text-lg font-bold">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-3 text-left">번호</th>
-              <th className="px-4 py-3 text-left">이름</th>
-              <th className="px-4 py-3 text-left">이메일</th>
-              <th className="px-4 py-3 text-left">휴대폰</th>
-              <th className="px-4 py-3 text-left">문의 내용</th>
-              <th className="px-4 py-3 text-left">상태</th>
-              <th className="px-4 py-3 text-center">관리</th>
+              <th className="px-4 py-3 text-left">ID</th>
+              <th className="px-4 py-3 text-left">Name</th>
+              <th className="px-4 py-3 text-left">Email</th>
+              <th className="px-4 py-3 text-left">Phone</th>
+              <th className="px-4 py-3 text-left">Message</th>
+              <th className="px-4 py-3 text-left">Status</th>
+              <th className="px-4 py-3 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -95,9 +95,9 @@ const AdminContacts = () => {
                 <td className="px-4 py-3">
                   <span
                     className={`px-2 py-1 rounded-full text-sm ${
-                      contact.status === "대기중"
+                      contact.status === "Loading"
                         ? "bg-blue-100 text-blue-800"
-                        : contact.status === "진행중"
+                        : contact.status === "In Progress"
                           ? "bg-yellow-100 text-yellow-800"
                           : "bg-green-100 text-green-800"
                     }`}
@@ -108,10 +108,10 @@ const AdminContacts = () => {
                 <td className="px-4 py-3">
                   <div className="flex justify-center space-x-2">
                     <button className="px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-600">
-                      수정
+                      Edit
                     </button>
                     <button className="px-3 py-1.5 bg-red-500 text-white rounded hover:bg-red-600">
-                      삭제
+                      Delete
                     </button>
                   </div>
                 </td>
@@ -127,18 +127,18 @@ const AdminContacts = () => {
             key={contact.id}
             className="p-4 border rounded-lg bg-white shadow-md"
           >
-            <div className="text-lg font-bold">번호: {contact.id}</div>
-            <div>이름: {contact.name}</div>
-            <div>이메일: {contact.email}</div>
-            <div>휴대폰: {contact.phone}</div>
-            <div>내용: {contact.message}</div>
+            <div className="text-lg font-bold">ID: {contact.id}</div>
+            <div>Name: {contact.name}</div>
+            <div>Email: {contact.email}</div>
+            <div>Phone: {contact.phone}</div>
+            <div>Message: {contact.message}</div>
             <div>
-              상태:
+              Status:
               <span
                 className={`px-2 py-1 rounded-full text-sm ${
-                  contact.status === "대기중"
+                  contact.status === "Loading"
                     ? "bg-blue-100 text-blue-800"
-                    : contact.status === "진행중"
+                    : contact.status === "In Progress"
                       ? "bg-yellow-100 text-yellow-800"
                       : "bg-green-100 text-green-800"
                 }`}
@@ -148,10 +148,10 @@ const AdminContacts = () => {
             </div>
             <div className="mt-4 flex justify-end space-x-2">
               <button className="px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-600">
-                수정
+                Edit
               </button>
               <button className="px-3 py-1.5 bg-red-500 text-white rounded hover:bg-red-600">
-                삭제
+                Delete
               </button>
             </div>
           </div>
@@ -160,11 +160,11 @@ const AdminContacts = () => {
 
       <div className="mt-4 flex justify-center space-x-2 text-lg font-bold">
         <button className="px-3 py-1 rounded border disabled:opacity-50">
-          이전
+          Previous
         </button>
         <span className="px-3 py-1">1 / 1</span>
         <button className="px-3 py-1 rounded border disabled:opacity-50">
-          다음
+          Next
         </button>
       </div>
     </div>
