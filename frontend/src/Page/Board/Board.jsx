@@ -5,11 +5,41 @@ const Board = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
   const dummyPosts = [
-    { _id: 1, number: 1, title: "First post", createdAt: "2025-11-01T10:00:00", views: 10 },
-    { _id: 2, number: 2, title: "Second post", createdAt: "2025-11-02T11:30:00", views: 20 },
-    { _id: 3, number: 3, title: "Third post", createdAt: "2025-11-03T14:00:00", views: 30 },
-    { _id: 4, number: 4, title: "Fourth post", createdAt: "2025-11-04T16:45:00", views: 40 },
-    { _id: 5, number: 5, title: "Fifth post", createdAt: "2025-11-05T09:15:00", views: 50 },
+    {
+      _id: 1,
+      number: 1,
+      title: "First post",
+      createdAt: "2025-11-01T10:00:00",
+      views: 10,
+    },
+    {
+      _id: 2,
+      number: 2,
+      title: "Second post",
+      createdAt: "2025-11-02T11:30:00",
+      views: 20,
+    },
+    {
+      _id: 3,
+      number: 3,
+      title: "Third post",
+      createdAt: "2025-11-03T14:00:00",
+      views: 30,
+    },
+    {
+      _id: 4,
+      number: 4,
+      title: "Fourth post",
+      createdAt: "2025-11-04T16:45:00",
+      views: 40,
+    },
+    {
+      _id: 5,
+      number: 5,
+      title: "Fifth post",
+      createdAt: "2025-11-05T09:15:00",
+      views: 50,
+    },
   ];
 
   const indexOfLastPost = currentPage * itemsPerPage;
