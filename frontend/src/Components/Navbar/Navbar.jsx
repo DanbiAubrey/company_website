@@ -9,7 +9,7 @@ const menuItems = [
   { path: "/about", label: "About us" },
   { path: "/leadership", label: "Leadership" },
   { path: "/board", label: "Board" },
-  { path: "/our-services", label: "Our Services" },
+  { path: "/services", label: "Our Services" },
   { path: "/contact", label: "Contact" },
 ];
 
