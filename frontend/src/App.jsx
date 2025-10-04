@@ -26,6 +26,7 @@ import AdminContacts from "./Page/Admin/AdminContacts";
 import AdminNavbar from "./Components/AdminNavbar/AdminNavbar";
 
 import axios from "axios";
+import SinglePost from "./Page/Singlepost/SinglePost";
 
 function AuthRedirectRoute() {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -127,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: "/board",
         element: <Board />,
+      },
+      {
+        path: "/post/:id",
+        element: <SinglePost />,
       },
       {
         path: "/services",
